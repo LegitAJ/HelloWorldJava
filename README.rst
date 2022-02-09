@@ -1,4 +1,4 @@
-example.java.helloworld
+java.helloworld
 =======================
 
 This is "Hello World" Example for Java.
@@ -7,10 +7,12 @@ The structure ``HelloWorld`` package is like this: ::
 
   example.java.helloworld/
   |-- HelloWorld
-  |   `-- Main.java
-  |-- LICENSE
-  |-- Manifest.txt
-  `-- README.md
+      |src
+         -- Main.java
+         -- Test.java
+       -- LICENSE
+       -- Manifest.txt
+       -- README.md
 
 Compile class
 -------------
@@ -46,6 +48,10 @@ For run the JAR file packed, execute the follow command: ::
   java -jar Main.jar
 
 This show the ``Hello world`` message.
+
+
+To automate CxAST scans use yml file in 
+
 
 Reference
 =========
