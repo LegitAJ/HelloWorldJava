@@ -1,6 +1,7 @@
-package HelloWorldJava;
+//package HelloWorldJava;
+package org.mycompany.helloworldjava;
 
-public class Main
+public class HelloWorldJava
 {
     public static void main(String[] args)
     {
