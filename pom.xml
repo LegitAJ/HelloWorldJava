@@ -15,6 +15,27 @@
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 -->
+
+<build>
+    <plugins>
+        <plugin>
+            <!-- Build an executable JAR -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.1.0</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>org.mycompany.helloworldjava.HelloWorldJava</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+
   <dependencies>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
@@ -57,12 +78,6 @@
 		<artifactId>undertow-core</artifactId>
 		<version>2.0.9.Final</version>
 	</dependency>
-	<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>servlet-api</artifactId>
-    <version>2.3</version>
-    <scope>provided</scope>
-  </dependency>
 </dependencies>
 <!--  <build>
     <finalName>HelloWorldJava</finalName>
