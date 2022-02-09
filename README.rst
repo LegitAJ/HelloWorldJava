@@ -1,13 +1,9 @@
-java.helloworld
+java.helloworldjava
 =======================
 
 This is "Hello World" Example for Java.
 
-The structure ``HelloWorld`` package is like this: ::
-
-  example.java.helloworld/
-  |-- HelloWorld
-      |src
+  |-- HelloWorld     
          -- Main.java
          -- Test.java
        -- LICENSE
