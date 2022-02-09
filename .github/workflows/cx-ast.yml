@@ -1,0 +1,41 @@
+name: cx-ast
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Download SCA Resolver
+        run: |
+          wget -q https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz
+          tar -xzvf ScaResolver-linux64.tar.gz
+          rm -rf ScaResolver-linux64.tar.gz
+          chmod +x ScaResolver
+          
+          
+      - name: Set up JDK 
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+          cache: maven
+          
+      - name: Checkmarx AST GitHub Action
+        uses: Checkmarx/ast-github-action@2.0.1
+        with:
+          project_name: adamw-ast-gh-action-sca-resolver
+          base_uri: ${{ secrets.AST_URI }}
+          cx_tenant: ${{ secrets.CX_TENANT }}
+          cx_client_id: ${{ secrets.CX_CLIENT_ID }}
+          cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
+          additional_params: --sca-resolver ./ScaResolver --debug
+
+
