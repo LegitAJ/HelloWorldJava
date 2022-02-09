@@ -1,7 +1,7 @@
 java.helloworldjava
 =======================
 
-This is "Hello World" Example for Java.
+This is "Hello World" Example for Java
 
   |-- HelloWorld     
          -- Main.java
