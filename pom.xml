@@ -40,7 +40,7 @@
             </configuration>
         </plugin>
     </plugins>
-    <finalName>HelloWorldJava</finalName>
+#    <finalName>HelloWorldJava</finalName>
 </build>
 
 
