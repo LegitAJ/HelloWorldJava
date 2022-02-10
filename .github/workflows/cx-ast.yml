@@ -20,13 +20,19 @@ jobs:
           rm -rf ScaResolver-linux64.tar.gz
           chmod +x ScaResolver
           
-          
+        
+ 
       - name: Set up JDK 
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
           java-version: '8'
           cache: maven
+
+      - name: Install Maven, NPM, ... # Add any necessary package management
+        run: |
+          sudo apt install maven
+
           
       - name: Checkmarx AST GitHub Action
         uses: Checkmarx/ast-github-action@2.0.1
