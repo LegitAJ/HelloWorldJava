@@ -42,7 +42,7 @@ jobs:
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
- -->
+
       - name: Checkmarx AST GitHub Action
         uses: Checkmarx/ast-github-action@2.0.1
         with:
