@@ -29,11 +29,18 @@ jobs:
           java-version: '11'
           cache: maven
 
+
+      - name:  Maven before install
+        run: mvn --batch-mode -v
+
       - name: Install Maven, NPM, ... # Add any necessary package management
         run: |
           sudo apt install maven
 
-          
+      - name:  Maven After install
+        run: mvn --batch-mode -v         
+
+ 
       - name: Checkmarx AST GitHub Action
         uses: Checkmarx/ast-github-action@2.0.1
         with:
