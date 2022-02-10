@@ -9,23 +9,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Download SCA Resolver
         run: |
           wget -q https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz
           tar -xzvf ScaResolver-linux64.tar.gz
           rm -rf ScaResolver-linux64.tar.gz
           chmod +x ScaResolver
-          
+
       - name: Get path after checkout and resolver download
-        run: | 
-         pwd 
+        run: |
+         pwd
          ls -ltra
- 
-      - name: Set up JDK 
+
+      - name: Set up JDK
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
@@ -36,15 +36,18 @@ jobs:
  #       run: mvn --batch-mode -v
 
  #     - name: Install Maven, NPM, ... # Add any necessary package management
- #       run: 
+ #       run:
  #         sudo apt install maven
 
  #     - name:  Maven After install
- #       run: mvn --batch-mode -v         
+ #       run: mvn --batch-mode -v
 
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
+
+      - name: Execute the Application
+        run: mvn exec:java
 
       - name: Checkmarx AST GitHub Action
         uses: Checkmarx/ast-github-action@2.0.1
@@ -55,5 +58,3 @@ jobs:
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           additional_params: --scan-types sca  --sca-resolver ./ScaResolver --debug
-
-
