@@ -61,5 +61,5 @@ jobs:
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           additional_params: --scan-types sca  --sca-resolver ./ScaResolver --debug
 
-       - name: Show SCAResolver log?
-         run: cat log/*
+       - name: Show SCAResolver log
+         run: ls -l log
