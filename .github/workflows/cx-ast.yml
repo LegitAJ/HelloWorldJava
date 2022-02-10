@@ -20,10 +20,11 @@ jobs:
           rm -rf ScaResolver-linux64.tar.gz
           chmod +x ScaResolver
 
-      - name: Get path after checkout and resolver download
+      - name: Get path after checkout and resolver download and show ini
         run: |
          pwd
          ls -ltra
+         cat Configuration.ini
 
       - name: Set up JDK
         uses: actions/setup-java@v2
