@@ -31,6 +31,14 @@
                 </archive>
             </configuration>
         </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <configuration>
+                <mainClass>org.mycompany.HelloWorldJava</mainClass>
+            </configuration>
+        </plugin>
     </plugins>
     <finalName>HelloWorldJava</finalName>
 </build>
