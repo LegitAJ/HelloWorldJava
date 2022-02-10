@@ -21,10 +21,9 @@ jobs:
           chmod +x ScaResolver
           
       - name: Get path after checkout and resolver download
-       run: | 
+        run: | 
          pwd 
          ls -ltra
-       
  
       - name: Set up JDK 
         uses: actions/setup-java@v2
