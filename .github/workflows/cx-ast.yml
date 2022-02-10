@@ -62,4 +62,4 @@ jobs:
           additional_params: --scan-types sca  --sca-resolver ./ScaResolver --debug
 
       - name: Show SCAResolver log
-        run: ls -l log
+        run: cat ./logs/project-name/*.log
