@@ -1,57 +1,27 @@
 java.helloworldjava
 =======================
 
-This is "Hello World" Example for Java.
+This is "Hello World" Example for Java with Maven that uses github actions
+Scans are automated to run upon push to repo master branch.  edit yml file to modify. 
 
-  |-- HelloWorld     
-         -- Main.java
-         -- Test.java
-       -- LICENSE
-       -- Manifest.txt
-       -- README.md
+
 
 Compile class
 -------------
 
-For compile the main class for package, execute the follow command: ::
+To compile the main class for package, execute the follow command: ::
 
-  javac HelloWorld/Main.java
-
-This generate the ``Main.class`` file into ``HelloWorld`` directory.
-
-Run class
----------
-
-For run the main class for package, execute the follow command: ::
-
-  java -cp . HelloWorld.Main
-
-This show the ``Hello world`` message.
-
-Create a JAR file
------------------
-
-For pack the main class for package as a JAR file, execute the follow command: ::
-
-  jar cfme Main.jar Manifest.txt HelloWorld.Main HelloWorld/Main.class
+  mvn clean package
 
 
-Run a JAR file
+Run the JAR file
 --------------
-
-For run the JAR file packed, execute the follow command: ::
-
-  java -jar Main.jar
-
-This show the ``Hello world`` message.
+mvn exec:java
 
 
-To automate CxAST scans use yml file in 
-
-
-Reference
-=========
-
-- `java - How to run a JAR file - Stack Overflow <http://stackoverflow.com/questions/1238145/how-to-run-a-jar-file>`_.
-
-- `Setting an Application's Entry Point (The Java™ Tutorials > Deployment > Packaging Programs in JAR Files) <http://docs.oracle.com/javase/tutorial/deployment/jar/appman.html>`_.
+Isssues
+--------
+This scan is supposed to call AST action with SCARESOLVER option but the sca scan fails.
+It appears no command line parameters can be passed to scaresolver option
+The logs indicate a problem with scaresolver finding maven even though it is available in the rest of the workflow.
+Program "Resolved 0 dependencies for file pom.xml. [Status=MavenNotAvailable]" 
