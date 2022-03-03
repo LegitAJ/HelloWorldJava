@@ -59,8 +59,7 @@ jobs:
           cx_tenant: ${{ secrets.CX_TENANT }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          additional_params: --scan-types sca --debug --sca-resolver ./ScaResolver 
-          # (cant send parameters to scaaresolver) --log-level Debug
+          additional_params: --scan-types sca --debug --sca-resolver ./ScaResolver  --sca-resolver-params "--log-level Debug"
 
       - name: Show SCAResolver log
         run: cat ./logs/project-name/*.log
