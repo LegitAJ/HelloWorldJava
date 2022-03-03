@@ -51,6 +51,10 @@ jobs:
 #     - name: Execute the Application
 #        run: mvn exec:java
 
+      - name: TEST CALLING BASH SHELL WITH MAVEN
+        run /bin/bash -c "mvn --version"
+#>> /tmp/tmppxUZ0f.tmp\"'; workingDirectory: /github/workspace/, processName: /bin/bash, args: -c \"mvn --version >> /tmp/tmppxUZ0f.tmp\", processCapture: CaptureError | CaptureOutput"  
+
       - name: Checkmarx AST GitHub Action
         uses: Checkmarx/ast-github-action@2.0.3
         with:
