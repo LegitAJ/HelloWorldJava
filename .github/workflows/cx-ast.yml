@@ -52,7 +52,7 @@ jobs:
         run: mvn exec:java
 
       - name: Checkmarx AST GitHub Action
-        uses: Checkmarx/ast-github-action@2.0.1
+        uses: Checkmarx/ast-github-action@2.0.13
         with:
           project_name: adamw-ast-gh-action-sca-resolver
           base_uri: ${{ secrets.AST_URI }}
