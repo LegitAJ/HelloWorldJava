@@ -24,7 +24,7 @@ jobs:
         run: |
          pwd
          ls -ltra
-         cat Configuration.ini
+#         cat Configuration.ini
 
       - name: Set up JDK
         uses: actions/setup-java@v2
