@@ -3,6 +3,7 @@ java.helloworldjava
 
 This is "Hello World" Example for Java with Maven that uses github actions
 Scans are automated to run upon push to repo master branch.  edit yml file to modify. 
+It was appended with some vulnerabilitie.
 
 
 
